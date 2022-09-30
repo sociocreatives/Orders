@@ -33,7 +33,7 @@ class Order(models.Model):
 
 class About(models.Model):
     title=models.CharField(max_length=200)
-    body=models.CharField(max_length=500)
+    body=models.TextField(max_length=30000)
     Author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_on=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
@@ -46,7 +46,7 @@ class About(models.Model):
 
 class Faq(models.Model):
     title=models.CharField(max_length=200)
-    body=models.CharField(max_length=500)
+    body=models.TextField(max_length=5000)
     Author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_on=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
@@ -59,7 +59,7 @@ class Faq(models.Model):
 
 class Terms(models.Model):
     title=models.CharField(max_length=200)
-    body=models.CharField(max_length=500)
+    body=models.TextField(max_length=5000)
     Author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_on=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
@@ -72,7 +72,7 @@ class Terms(models.Model):
 
 class Partners(models.Model):
     title=models.CharField(max_length=200)
-    body=models.CharField(max_length=500)
+    body=models.TextField(max_length=500)
     Author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_on=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
@@ -80,6 +80,9 @@ class Partners(models.Model):
     
     def __str__(self):
         return self.title
+<<<<<<< HEAD
     
     class Meta:  
         verbose_name_plural = 'Partners'
+=======
+>>>>>>> 10ce2d2b2c87ae501b00c012976629ee4842be4e
