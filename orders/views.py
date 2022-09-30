@@ -124,7 +124,7 @@ class PartnersView(generics.GenericAPIView):
     def get(self,request):
         partners=Partners.objects.all()
 
-        serializer=self.serializer_class(instance=partners,many=True)
+        serializer=self.serializer_class(instance=partners,many=True, context={"request": request})
 
         return Response(data=serializer.data,status=status.HTTP_200_OK)
         
