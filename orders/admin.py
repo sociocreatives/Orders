@@ -1,13 +1,13 @@
 from django.contrib import admin
-from .models import Order, About, Faq, Terms, Partners
+from .models import About, Faq, Terms, Partners
 
 # Register your models here.
 
 
-@admin.register(Order)
-class OrderAdmin(admin.ModelAdmin):
-    list_display=['id','flavour','size','order_status','size']
-    list_filter=['placed_at','updated_at','order_status']
+# @admin.register(Order)
+# class OrderAdmin(admin.ModelAdmin):
+#     list_display=['id','flavour','size','order_status','size']
+#     list_filter=['placed_at','updated_at','order_status']
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):

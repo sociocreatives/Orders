@@ -40,6 +40,9 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:  
+        verbose_name_plural = 'About Us'
 
 class Faq(models.Model):
     title=models.CharField(max_length=200)
@@ -50,6 +53,9 @@ class Faq(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:  
+        verbose_name_plural = 'FAQs'
 
 class Terms(models.Model):
     title=models.CharField(max_length=200)
@@ -61,13 +67,19 @@ class Terms(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:  
+        verbose_name_plural = 'Terms & Conditions'
+
 class Partners(models.Model):
     title=models.CharField(max_length=200)
     body=models.CharField(max_length=500)
     Author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_on=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
-    picture=models.ImageField(upload_to='pictures/%Y/%m/%d/', max_length=255, null=True, blank=True)
+    picture=models.ImageField(default='default.jpg', upload_to='partner_pics', max_length=255, null=True, blank=True)
     
     def __str__(self):
         return self.title
+    
+    class Meta:  
+        verbose_name_plural = 'Partners'
