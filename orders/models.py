@@ -80,9 +80,6 @@ class Partners(models.Model):
     
     def __str__(self):
         return self.title
-<<<<<<< HEAD
     
     class Meta:  
         verbose_name_plural = 'Partners'
-=======
->>>>>>> 10ce2d2b2c87ae501b00c012976629ee4842be4e
